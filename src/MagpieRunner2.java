@@ -20,6 +20,7 @@ public class MagpieRunner2 {
 
 		while (!statement.equals("Bye")) {
 			System.out.println(maggie.getResponse(statement));
+			System.out.println(maggie.respondPlease(statement));
 			statement = in.nextLine();
 		}
 	}

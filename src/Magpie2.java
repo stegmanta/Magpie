@@ -67,4 +67,12 @@ public class Magpie2 {
 
 		return response;
 	}
+
+	public String respondPlease(String statement){
+		String response = "";
+		if (statement.indexOf("dog")>=0|| statement.indexOf("cat")>=0){
+			statement = "Tell me more about your pets.";
+		}
+		return statement;
+	}
 }
