@@ -37,12 +37,23 @@ public class Magpie2 {
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0) {
-			response = "Tell me more about your family.";
-		} else {
-			response = getRandomResponse();
-		}
-		return response;
-	}
+				response = "Tell me more about your family.";
+				}else if(statement.indexOf("dog") >= 0
+				|| statement.indexOf("Dog") >= 0
+				|| statement.indexOf("cat") >= 0
+				|| statement.indexOf("Cat") >= 0
+				|| statement.indexOf("dog") >= 0){
+					response = "Tell me more about your pets.";
+				}else if(statement.indexOf("Mr. Padjen") >= 0 ) {
+					response = "What an awesome fella";
+					// }else if(statement.trim()) {
+					// 	response = "Say something please";
+
+					
+							}else{
+								response = getRandomResponse();
+								}	return response;
+								}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
@@ -68,11 +79,5 @@ public class Magpie2 {
 		return response;
 	}
 
-	public String respondPlease(String statement){
-		String response = "";
-		if (statement.indexOf("dog")>=0|| statement.indexOf("cat")>=0){
-			statement = "Tell me more about your pets.";
-		}
-		return statement;
-	}
 }
+	
