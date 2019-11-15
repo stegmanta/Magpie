@@ -20,7 +20,6 @@ public class MagpieRunner2 {
 
 		while (!statement.equals("Bye")) {
 			System.out.println(maggie.getResponse(statement));
-			// System.out.println(statement.trim()); trying to figure out what trim does
 			statement = in.nextLine();
 		}
 	}

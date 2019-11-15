@@ -1,4 +1,4 @@
-### Activity 1
+###Activity 1
 
 ##Elbot the robot
 
@@ -55,8 +55,11 @@ It says interesting tell me more.
 • Do you know my brother? 
 It says Why so negative
 
+#1. What happens when a keyword is included in another word? Consider statements like I know all the state capitals and I like vegetables smothered in cheese. Explain the problem with the responses to these statements?
 
+The problem this causes is since it's looking for an index of the word in the statement it means even if the word is apart of another word it will still ask the question related to that word.
 
+###Activity 3
 
 
 
