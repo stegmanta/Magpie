@@ -23,9 +23,6 @@ public class MagpieRunner2 {
 			statement = in.nextLine();
 		}
 
-		 int findKeyword(statement, goal) {
-				return findKeyword(statement, goal, 0);
-			}
 	}
 
 

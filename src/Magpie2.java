@@ -32,28 +32,38 @@ public class Magpie2 {
 	public String getResponse(String statement) {
 		String response = "";
 		String trimmedStatement = statement.trim();
-		if (statement.indexOf("no") >= 0) {
+		if (statement.indexOf("no",0) >= 0) {
 			response = "Why so negative?";
-		} else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0) {
+		} else if (findKeyword(statement,"mother",0) >= 0
+				|| findKeyword(statement,"father",0) >= 0
+				|| findKeyword(statement,"sister",0) >= 0
+				|| findKeyword(statement,"brother",0) >= 0) {
 				response = "Tell me more about your family.";
-				}else if(statement.indexOf("dog") >= 0
-				|| statement.indexOf("Dog") >= 0
-				|| statement.indexOf("cat") >= 0
-				|| statement.indexOf("Cat") >= 0
-				|| statement.indexOf("dog") >= 0){
+				}else if(statement.indexOf("dog",0) >= 0
+				|| findKeyword(statement,"Dog",0) >= 0
+				|| findKeyword(statement,"cat",0) >= 0
+				|| findKeyword(statement,"Cat",0) >= 0
+				|| findKeyword(statement,"dog",0) >= 0){
 					response = "Tell me more about your pets.";
-				}else if(statement.indexOf("Mr. Padjen") >= 0 ) {
+				}else if(findKeyword(statement,"Mr. Padjen",0) >= 0 ) {
 					response = "What an awesome fella";
 					}else if(trimmedStatement.equals("")) {
 						response = "Say something please";
-							}else if(statement.indexOf("Do you like candy",0)){
-							}else{
 								response = getRandomResponse();
-								}	return response;
-								}
+								}else if(findKeyword(statement,"candy",0) >= 0
+								|| findKeyword(statement,"Candy",0) >=0 ){
+									response ="Do you like candy";
+
+								}else if(findKeyword(statement,"spongebob squarepants",0) >=0
+								|| findKeyword(statement,"Spongebob Squarepants",0)>=0) {
+									response ="Who lives in a pineapple under the sea";
+								}else if(findKeyword(statement,"pizza",0)>=0) {
+									response ="wow pizza is really good";
+									}else {
+										response = getRandomResponse();
+									}
+									return response;
+	}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
@@ -79,6 +89,20 @@ public class Magpie2 {
 		return response;
 	}
 
+	/**
+	 * Search for one word in phrase. The search is not case sensitive. This
+	 * method will check that the given goal is not a substring of a longer
+	 * string (so, for example, "I know" does not contain "no").
+	 * 
+	 * @param statement
+	 *            the string to search
+	 * @param goal
+	 *            the string to search for
+	 * @param startPos
+	 *            the character of the string to begin the search at
+	 * @return the index of the first occurrence of goal in statement or -1 if
+	 *         it's not found
+	 */
 	private int findKeyword(String statement, String goal, int startPos) {
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
@@ -111,10 +135,36 @@ public class Magpie2 {
 					&& ((after.compareTo("a") < 0) || (after.compareTo("z") > 0))) {
 				return psn;
 			}
-			
+
+			// The last position didn't work, so let's find
+			// the next, if there is one.
+			psn = phrase.indexOf(goal, psn + 1);
+
 		}
+
+		return -1;
 	}
+
+	/**
+	 * Search for one word in phrase. The search is not case sensitive. This
+	 * method will check that the given goal is not a substring of a longer
+	 * string (so, for example, "I know" does not contain "no"). The search
+	 * begins at the beginning of the string.
+	 * 
+	 * @param statement
+	 *            the string to search
+	 * @param goal
+	 *            the string to search for
+	 * @return the index of the first occurrence of goal in statement or -1 if
+	 *         it's not found
+	 */
+	private int findKeyword(String statement, String goal) {
+		return findKeyword(statement, goal, 0);
+	}
+
+
 }
+
 
 
 	
