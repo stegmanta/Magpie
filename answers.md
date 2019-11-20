@@ -67,6 +67,16 @@ The problem this causes is since it's looking for an index of the word in the st
 
 The integer "find keyword" finds the statement put in by the user and checks the character before and after the starting and ending psn (of where it should belong) to check if it belongs with the statement that leads to the correct response. So that saying smother in the chatbot won't make it ask about your family.
 
+###Activity 4
+
+How does it respond to: 
+• I want to build a robot. 
+• I want to understand French. 
+• Do you like me? 
+• You confuse me. 
+
+it responds to all of these with the random response since it's not built in yet.
+
 
 
 
