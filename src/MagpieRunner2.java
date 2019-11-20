@@ -22,6 +22,11 @@ public class MagpieRunner2 {
 			System.out.println(maggie.getResponse(statement));
 			statement = in.nextLine();
 		}
+
+		 int findKeyword(statement, goal) {
+				return findKeyword(statement, goal, 0);
+			}
 	}
+
 
 }

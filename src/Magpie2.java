@@ -49,7 +49,7 @@ public class Magpie2 {
 					response = "What an awesome fella";
 					}else if(trimmedStatement.equals("")) {
 						response = "Say something please";
-							}else if(statement.indexOf("Do you like candy") {
+							}else if(statement.indexOf("Do you like candy",0)){
 							}else{
 								response = getRandomResponse();
 								}	return response;
@@ -78,6 +78,7 @@ public class Magpie2 {
 
 		return response;
 	}
+
 	private int findKeyword(String statement, String goal, int startPos) {
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
@@ -110,10 +111,9 @@ public class Magpie2 {
 					&& ((after.compareTo("a") < 0) || (after.compareTo("z") > 0))) {
 				return psn;
 			}
-			private int findKeyword(String statement, String goal) {
-				return findKeyword(statement, goal, 0);
-			}
-
+			
+		}
+	}
 }
 
 
